@@ -13,6 +13,3 @@ else{
 
 echo "Error:".$query."<br>".$database->error;
 }
-
-
- ?>

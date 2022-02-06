@@ -23,7 +23,3 @@ $database = mysqli_connect('localhost', 'root', '', 'lims');
     else {
   die("Error: The file does not exist.");
 }
-
-
-
-?>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Lend A Book </title>
   <!-- plugins:css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
   <link rel="stylesheet" href="assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
@@ -197,7 +198,7 @@
         <div class="content-wrapper">
           <?php
           $database = mysqli_connect('localhost', 'root', '', 'lims');
-          $results = mysqli_query($database, " SELECT * FROM `video`");
+          $results = mysqli_query($database, " SELECT `bCmnt_id`, tbl_user.first_name, book.name, `cmnt` FROM `bkcmnt` INNER JOIN tbl_user ON bkcmnt.u_id = tbl_user.id INNER JOIN book ON bkcmnt.b_id = book.id;");
           ?>
 
 
@@ -205,52 +206,20 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th> Name</th>
-                <th>Author</th>
-                <th>restrictions</th>
-                <th>copies</th>
-                <th>Publisher</th>
-                <th>Add to Favoorite</th>
-                <th>Add Comment</th>
-                <th>View Comments</th>
+                <th>User Name</th>
+                <th>Book Name</th>
+                <th>Comment</th>
+                <th>Delete Comment</th>
               </tr>
             </thead>
             <tbody>
               <?php while ($row = mysqli_fetch_array($results)) { ?>
                 <tr>
-                  <td><?php echo $row['id']; ?></td>
-                  <td><?php echo $row['video_name']; ?></td>
-                  <td><?php echo $row['author']; ?></td>
-                  <td><?php echo $row['restrictions']; ?></td>
-                  <td><?php echo $row['copies']; ?></td>
-                  <td><?php echo $row['publisher']; ?></td>
-
-                  <td>
-                    <a href="php/VReserve.php?id=<?php echo $row["id"]; ?>">Reserve Video</a>
-                  </td>
-
-                  <td>
-                    <a href="php/addFavVideo.php?id=<?php echo $row["id"]; ?>">Favorite</a>
-                  </td>
-
-                  <td>
-                    <script type="text/javascript">
-                      function addComments() {
-                        document.location.href = "videoComments.php?id=<?php echo $row["id"]; ?>";
-                      }
-                    </script>
-                    <a href="#" onClick="addComments()">Comments</a>
-                  </td>
-
-                  <td>
-                    <script type="text/javascript">
-                      function viewComments() {
-                        document.location.href = "viewVComments.php?id=<?php echo $row["id"]; ?>";
-                      }
-                    </script>
-                    <a href="#" onClick="viewComments()">ViewComments</a>
-                  </td>
-
+                  <td><?php echo $row['bCmnt_id']; ?></td>
+                  <td><?php echo $row['first_name']; ?></td>
+                  <td><?php echo $row['name']; ?></td>
+                  <td><?php echo $row['cmnt']; ?></td>
+                  <td><a href="php/deleteBookComment.php?id=<?php echo $row["bCmnt_id"]; ?>">Delete</a></td>
                 </tr>
               <?php } ?>
             </tbody>
@@ -272,6 +241,9 @@
   <!-- plugins:js -->
   <script src="assets/vendors/js/vendor.bundle.base.js"></script>
   <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->

@@ -9,10 +9,10 @@
   <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librarian Registration</title>
 </head>
 
 <body>
-
 
   <style type="text/css">
     /* Google Font Link */
@@ -272,11 +272,7 @@
     }
   </style>
 
-  <?php
 
-
-  $id = $_GET['id'];
-  ?>
 
   <div class="container">
     <input type="checkbox" id="flip">
@@ -296,19 +292,41 @@
     <div class="forms">
       <div class="form-content">
         <div class="login-form">
-          <div class="title">Add Comment for Video</div>
-          <form method="post" action="php/addVComment.php?id=<?php echo ($id) ?>">
-
+          <div class="title">Sign Up</div>
+          <form method="post" action="php/libregistration.php">
             <div class="input-boxes">
               <div class="input-box">
-                <textarea type="text" name="cm" value="" placeholder="Enter your Idea" required></textarea>
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="fname" value="" placeholder="Enter your First Name" required>
               </div>
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" name="lname" value="" placeholder="Enter your Last Name" required>
+                </div>
+                <div class="input-boxes">
+                  <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="email" value="" placeholder="Enter your email" required>
+                  </div>
+                  <div class="input-boxes">
+                    <div class="input-box">
+                      <i class="fas fa-envelope"></i>
+                      <input type="text" name="age" value="" placeholder="Enter your age" required>
+                    </div>
 
-              <div class="button input-box">
-                <input type="submit" name="save" value="save">
-              </div>
+                    <div class="input-boxes">
 
-            </div>
+                      <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" value="" placeholder="Enter your password" required>
+                      </div>
+
+                      <div class="button input-box">
+                        <input type="submit" name="save" value="save">
+                      </div>
+
+                    </div>
           </form>
         </div>
 

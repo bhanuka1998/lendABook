@@ -1,15 +1,26 @@
 <?php 
+
 session_start();
-$user_id = $_SESSION['uid'];
-$video_id = $_GET['id'];
+
+$uid = $_SESSION['uid'];
+
+$bid = $_GET['id'];
+
+
  $database = mysqli_connect('localhost', 'root', '', 'lims');
-$query = "INSERT INTO `favoritevideo` ( `user_id`, `video_id`) VALUES ( '$user_id', '$video_id')";
+
+
+
+
+$query = "INSERT INTO `favoritebook` (`u_id`, `b_id`) VALUES ( '$uid', '$bid')";
+
+
+
 if($database->query($query)===TRUE){
-echo "add Fav";
+echo "Reserved";
+
 }
 else{
+
 echo "Error:".$query."<br>".$database->error;
 }
-
-
- ?>

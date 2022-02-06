@@ -8,13 +8,15 @@
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email= $_POST['email'];
-    $password = $_POST['email'];
+    $password = $_POST['password'];
     $age =$_POST['age'];
-    $package =$_POST['package'];
-    $role = 1;
+    $package =filter_input(INPUT_POST, 'package', FILTER_SANITIZE_STRING);
+    $role ="user";
+
+    
     
 
-    mysqli_query($db, "INSERT INTO `user` (`first_name`, `last_name`, `email`, `role`, `age`, `password`, `package`) VALUES ( '$fname', '$lname', '$email', '$role', '$age', '$password', '$package')"); 
+    mysqli_query($db, "INSERT INTO `tbl_user` (`first_name`, `last_name`, `email`, `role`, `age`, `password`, `package`) VALUES ( '$fname', '$lname', '$email', '$role', '$age', '$password', '$package')"); 
     $_SESSION['message'] = "Address saved"; 
     header('location: ../UserLogin.php');
 
@@ -22,7 +24,3 @@
     else {
   die("Error: The file does not exist.");
 }
-
-
-
-?>

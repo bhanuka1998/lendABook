@@ -13,7 +13,6 @@
 
 <body>
 
-
   <style type="text/css">
     /* Google Font Link */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -272,11 +271,7 @@
     }
   </style>
 
-  <?php
 
-
-  $id = $_GET['id'];
-  ?>
 
   <div class="container">
     <input type="checkbox" id="flip">
@@ -284,8 +279,8 @@
       <div class="front">
         <!--<img src="images/frontImg.jpg" alt="">-->
         <div class="text">
-          <span class="text-1">Reading <br> Listing & Learning</span>
-          <span class="text-2">Let's get connected</span>
+          <span class="text-1">LEND A BOOK <br> Libery Management System</span>
+          <span class="text-2">Add Video Borrowing</span>
         </div>
       </div>
       <div class="back">
@@ -296,19 +291,42 @@
     <div class="forms">
       <div class="form-content">
         <div class="login-form">
-          <div class="title">Add Comment for Video</div>
-          <form method="post" action="php/addVComment.php?id=<?php echo ($id) ?>">
-
+          <div class="title">Add Video Borrowing</div>
+          <form method="post" action="php/addVBorrowing.php">
             <div class="input-boxes">
               <div class="input-box">
-                <textarea type="text" name="cm" value="" placeholder="Enter your Idea" required></textarea>
+                <i class="fas fa-id-card" aria-hidden="true"></i>
+                <input type="text" name="user_id" value="" placeholder="Enter User ID" required>
               </div>
-
-              <div class="button input-box">
-                <input type="submit" name="save" value="save">
-              </div>
-
             </div>
+            
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" name="user_email" value="" placeholder="Enter User Email" required>
+                </div>
+              </div>
+
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-book"></i>
+                  <input type="text" name="video_id" value="" placeholder="Enter Video ID" required>
+                </div>
+              </div>
+
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-book"></i>
+                  <input type="datetime-local" name="return_date" value="" placeholder="Enter Book ID" required>
+                </div>
+              </div>
+
+              <div class="input-boxes">
+                <div class="button input-box">
+                  <input type="submit" name="save" value="save">
+                </div>
+              </div>
+
           </form>
         </div>
 
