@@ -7,7 +7,6 @@ $database = mysqli_connect('localhost', 'root', '', 'lims');
 
   if (isset($_POST['save'])) {
     $name = $_POST['video_name'];
-    $isbn= $_POST['isbn'];
     $author= $_POST['author'];
     $copies = $_POST['copies'];
     $restrictions =$_POST['restrictions'];
@@ -15,7 +14,7 @@ $database = mysqli_connect('localhost', 'root', '', 'lims');
     
     
     
-mysqli_query($database,"INSERT INTO `video` (`video_name`, `isbn`, `author`, `restrictions`, `copies`, `publisher`) VALUES ( '$name', '$isbn', '$author', '$copies', '$restrictions', '$publisher')");
+mysqli_query($database,"INSERT INTO `video` (`video_name`, `author`, `restrictions`, `copies`, `publisher`) VALUES ( '$name', '$author', '$copies', '$restrictions', '$publisher')");
 
  
     header('location: ../viewVideo.php');
@@ -24,7 +23,3 @@ mysqli_query($database,"INSERT INTO `video` (`video_name`, `isbn`, `author`, `re
     else {
   die("Error: The file does not exist.");
 }
-
-
-
-?>

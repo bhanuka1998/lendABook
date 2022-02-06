@@ -197,7 +197,7 @@
         <div class="content-wrapper">
           <?php
           $database = mysqli_connect('localhost', 'root', '', 'lims');
-          $results = mysqli_query($database, " SELECT * FROM `video`");
+          $results = mysqli_query($database, " SELECT `vcustomer_id`, tbl_user.first_name, video.video_name, `vcomment` FROM `vcmnt` INNER JOIN tbl_user ON vcmnt.user_id = tbl_user.id INNER JOIN video ON vcmnt.video_id = video.id;");
           ?>
 
 
@@ -205,52 +205,20 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th> Name</th>
-                <th>Author</th>
-                <th>restrictions</th>
-                <th>copies</th>
-                <th>Publisher</th>
-                <th>Add to Favoorite</th>
-                <th>Add Comment</th>
-                <th>View Comments</th>
+                <th>User Name</th>
+                <th>Video Name</th>
+                <th>Comment</th>
+                <th>Delete Comment</th>
               </tr>
             </thead>
             <tbody>
               <?php while ($row = mysqli_fetch_array($results)) { ?>
                 <tr>
-                  <td><?php echo $row['id']; ?></td>
+                  <td><?php echo $row['vcustomer_id']; ?></td>
+                  <td><?php echo $row['first_name']; ?></td>
                   <td><?php echo $row['video_name']; ?></td>
-                  <td><?php echo $row['author']; ?></td>
-                  <td><?php echo $row['restrictions']; ?></td>
-                  <td><?php echo $row['copies']; ?></td>
-                  <td><?php echo $row['publisher']; ?></td>
-
-                  <td>
-                    <a href="php/VReserve.php?id=<?php echo $row["id"]; ?>">Reserve Video</a>
-                  </td>
-
-                  <td>
-                    <a href="php/addFavVideo.php?id=<?php echo $row["id"]; ?>">Favorite</a>
-                  </td>
-
-                  <td>
-                    <script type="text/javascript">
-                      function addComments() {
-                        document.location.href = "videoComments.php?id=<?php echo $row["id"]; ?>";
-                      }
-                    </script>
-                    <a href="#" onClick="addComments()">Comments</a>
-                  </td>
-
-                  <td>
-                    <script type="text/javascript">
-                      function viewComments() {
-                        document.location.href = "viewVComments.php?id=<?php echo $row["id"]; ?>";
-                      }
-                    </script>
-                    <a href="#" onClick="viewComments()">ViewComments</a>
-                  </td>
-
+                  <td><?php echo $row['vcomment']; ?></td>
+                  <td><a href="php/deleteVideoComment.php?id=<?php echo $row["vcustomer_id"]; ?>">Delete</i></a></td>
                 </tr>
               <?php } ?>
             </tbody>

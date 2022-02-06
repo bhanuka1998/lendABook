@@ -153,7 +153,7 @@
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="../libMsLendABook/userDashboard.php">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
@@ -164,24 +164,6 @@
                 <span class="menu-title">Books</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/AddBook.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Add New Books</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/viewBookBorrowing.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">View Book Borrowings</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/deleteBookComments.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Delete Book Comments</span>
-              </a>
-            </li>
              <li class="nav-item">
               <a class="nav-link" href="../libMsLendABook/viewVideo.php">
                 <i class="menu-icon typcn typcn-document-text"></i>
@@ -189,61 +171,19 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/AddVideo.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Add New Videos</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/viewVideoBorrowings.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">View Video Borrowings</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/deleteVideoComments.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Delete Video Comments</span>
-              </a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/viewBookReservation.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Book Reservations</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/viewVideoReservation.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Video Reservations</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/addBBorrowing.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Book Borrowings</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../libMsLendABook/addVBorrowing.php">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Video Borrowings</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="../libMsLendABook/php/signout.php">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Signout</span>
               </a>
-            </li>
-           
+            </li>           
           </ul>
         </nav>
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+              <h1>Welcome User!!!</h1>
 
-            <h1>Welcome Librarian</h1>
+
             
           </div>
           <!-- content-wrapper ends -->
@@ -252,7 +192,8 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="container-fluid clearfix">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bhanuka vithanage 2022</span>
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
             </div>
           </footer>
           <!-- partial -->

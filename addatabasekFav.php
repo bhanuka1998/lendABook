@@ -10,6 +10,3 @@ echo "add Fav";
 else{
 echo "Error:".$query."<br>".$database->error;
 }
-
-
- ?>
